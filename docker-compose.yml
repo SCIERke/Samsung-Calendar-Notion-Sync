@@ -1,0 +1,78 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: n8n_postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - n8n_postgres_data:/var/lib/postgresql/data
+    networks:
+      - pg_network
+      - progres_data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: pgadmin_password
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgres
+    networks:
+      - pg_network
+
+
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - "5678:5678"
+    environment:
+      # Basic setup
+      N8N_HOST: localhost
+      N8N_PORT: 5678
+      N8N_PROTOCOL: http
+
+      # Database config
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: postgres
+      DB_POSTGRESDB_PORT: 5432
+      DB_POSTGRESDB_DATABASE: n8n_db
+      DB_POSTGRESDB_USER: n8n
+      DB_POSTGRESDB_PASSWORD: n8n_password
+
+      # Optional: authentication (useful if deploying publicly)
+      N8N_BASIC_AUTH_ACTIVE: "true"
+      N8N_BASIC_AUTH_USER: admin
+      N8N_BASIC_AUTH_PASSWORD: admin123
+
+      # Timezone
+      GENERIC_TIMEZONE: Asia/Bangkok
+
+      # Webhook URLs (important if you plan to use webhooks)
+      WEBHOOK_URL: http://localhost:5678/
+
+    volumes:
+      - n8n_data:/home/node/.n8n
+    networks:
+      - progres_data
+
+volumes:
+  n8n_data:
+  n8n_postgres_data:
+
+
+networks:
+  pg_network:
+    driver: bridge
+  progres_data:
+    driver: bridge

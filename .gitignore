@@ -1,0 +1,19 @@
+# n8n sensitive credentials
+credentials.json
+
+# Logs
+*.log
+
+# Node modules (if any in repo)
+node_modules/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+
+# Environment variables
+.env
