@@ -36,6 +36,8 @@ services:
       - postgres
     ports:
       - "5678:5678"
+    env_file:
+      - ./.env
     environment:
       # Basic setup
       N8N_HOST: localhost
