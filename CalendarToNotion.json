@@ -22,8 +22,8 @@
       "type": "n8n-nodes-base.googleCalendarTrigger",
       "typeVersion": 1,
       "position": [
-        -1472,
-        880
+        -176,
+        784
       ],
       "id": "c75994a2-ccfb-498b-91f2-4fffa22407c8",
       "name": "Google Calendar Trigger1",
@@ -55,8 +55,8 @@
       "type": "n8n-nodes-base.googleCalendarTrigger",
       "typeVersion": 1,
       "position": [
-        -1504,
-        1424
+        -192,
+        1248
       ],
       "id": "50a3d2c7-5840-4a98-9055-9e5e21dc9069",
       "name": "Google Calendar Trigger2",
@@ -72,8 +72,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -1760,
-        528
+        -1216,
+        96
       ],
       "id": "304c41ab-d3bc-4789-8cef-3680627d25a5",
       "name": "Sync event"
@@ -218,7 +218,7 @@
       "type": "n8n-nodes-base.googleCalendar",
       "typeVersion": 1.3,
       "position": [
-        -544,
+        -592,
         272
       ],
       "id": "0f96d6f3-9e6d-4695-84b2-73910ba659ce",
@@ -401,7 +401,7 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
       "position": [
-        192,
+        176,
         368
       ],
       "id": "bdabfba5-f02c-4a41-a279-df5438cdc4a4",
@@ -554,8 +554,8 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
       "position": [
-        -416,
-        752
+        1248,
+        672
       ],
       "id": "302be2de-66ea-49c8-b517-3bd65ba3df12",
       "name": "Update rows in a table",
@@ -594,8 +594,8 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
       "position": [
-        -896,
-        1376
+        1232,
+        1232
       ],
       "id": "3ad0041d-f875-43a3-b9e2-edc00bb1ce1d",
       "name": "Delete table or rows",
@@ -626,8 +626,8 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
       "position": [
-        -976,
-        304
+        -800,
+        -96
       ],
       "id": "900877f7-21f7-4410-9f60-a1d307d5fa6e",
       "name": "Clear All Data",
@@ -713,7 +713,8 @@
         272
       ],
       "id": "7a1e31ea-d67b-4605-90ab-7924a1517407",
-      "name": "Edit Fields"
+      "name": "Edit Fields",
+      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -915,7 +916,7 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        1232,
+        1968,
         240
       ],
       "id": "436adec9-fd64-49d0-9dcd-1d0cd6e0e1e7",
@@ -949,6 +950,7 @@
       ],
       "id": "e1ad0f29-f939-4a9e-ae7b-7d5f75f0526b",
       "name": "Get many database pages1",
+      "executeOnce": true,
       "credentials": {
         "notionApi": {
           "id": "Lmzxv9I7SbCMv9e4",
@@ -981,6 +983,7 @@
       ],
       "id": "bb4bc9ae-ef42-41e2-89d2-deecb2c20a23",
       "name": "Select rows from a table",
+      "executeOnce": true,
       "credentials": {
         "postgres": {
           "id": "zkblaASutsJqtAnq",
@@ -1011,29 +1014,6 @@
       ],
       "id": "85841d0f-e785-4232-aa50-4f292bc17821",
       "name": "Merge1"
-    },
-    {
-      "parameters": {
-        "mode": "combine",
-        "advanced": true,
-        "mergeByFields": {
-          "values": [
-            {
-              "field1": "google_event_id",
-              "field2": "google_event_id"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3.2,
-      "position": [
-        1040,
-        256
-      ],
-      "id": "b2794a5f-5222-4183-8361-68208684f15d",
-      "name": "progres_google-change"
     },
     {
       "parameters": {
@@ -1129,8 +1109,8 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        -1168,
-        1056
+        128,
+        960
       ],
       "id": "adf477c7-c6c7-4e96-9366-fc4472b695ff",
       "name": "Get many database pages",
@@ -1170,8 +1150,8 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        -736,
-        1056
+        288,
+        960
       ],
       "id": "b9db0d4e-1ca1-4c03-b3ef-f0e902879bed",
       "name": "Filter"
@@ -1214,8 +1194,8 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        -416,
-        896
+        1232,
+        832
       ],
       "id": "2f530ead-ad40-478d-9c1a-6bf9a53f0b2a",
       "name": "Update a database page",
@@ -1225,44 +1205,6 @@
           "name": "Notion account"
         }
       }
-    },
-    {
-      "parameters": {
-        "resource": "databasePage",
-        "operation": "get",
-        "pageId": {
-          "__rl": true,
-          "value": "https://www.notion.so/tesdasdaczxcxz-293a5ca462ef81a6bb0cec19cf7ceb6f",
-          "mode": "url"
-        }
-      },
-      "type": "n8n-nodes-base.notion",
-      "typeVersion": 2.2,
-      "position": [
-        80,
-        592
-      ],
-      "id": "066da57d-699d-4446-9a03-f493cd021c69",
-      "name": "Get a database page",
-      "credentials": {
-        "notionApi": {
-          "id": "Lmzxv9I7SbCMv9e4",
-          "name": "Notion account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        -1584,
-        528
-      ],
-      "id": "8b429a40-e6ae-4698-9794-418ffa0a2baf",
-      "name": "Edit Fields2"
     },
     {
       "parameters": {
@@ -1281,8 +1223,8 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        -1120,
-        1600
+        128,
+        1424
       ],
       "id": "b0b9ba6b-0d59-4d0e-9d39-1f0f03c9f9a0",
       "name": "Get many database pages2",
@@ -1322,8 +1264,8 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        -848,
-        1600
+        272,
+        1424
       ],
       "id": "23357f99-3c7b-488a-8f8b-eddb504d1001",
       "name": "Filter1"
@@ -1399,8 +1341,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -1312,
-        880
+        -16,
+        784
       ],
       "id": "bd71b7e2-af68-4773-82fc-0b179fd3f4eb",
       "name": "Extract Information-Updated"
@@ -1476,103 +1418,178 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -1328,
-        1424
+        -16,
+        1248
       ],
       "id": "6d2ddecb-c80e-4696-9246-8fdb0c9f2071",
       "name": "Extract Information-Deleted"
     },
     {
       "parameters": {
-        "resource": "databasePage",
-        "operation": "update",
-        "pageId": {
-          "__rl": true,
-          "mode": "id",
-          "value": "={{ $json.id }}",
-          "__regex": "^([0-9a-f]{8}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{12})"
-        },
-        "propertiesUi": {
-          "propertyValues": [
+        "method": "PATCH",
+        "url": "=https://api.notion.com/v1/pages/{{$json[\"id\"]}}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
             {
-              "key": "Date|date",
-              "range": true,
-              "dateStart": "={{ $('Extract Information-Updated').item.json.start_date }}",
-              "dateEnd": "={{ $('Extract Information-Updated').item.json.end_date }}",
-              "timezone": "Asia/Bangkok"
+              "name": "Notion-Version",
+              "value": "2022-06-28"
             },
             {
-              "key": "Description|rich_text",
-              "textContent": "={{ $('Extract Information-Updated').item.json.link }}"
-            },
-            {
-              "key": "Name|title",
-              "title": "={{ $('Extract Information-Updated').item.json.name }}"
-            },
-            {
-              "key": "priority|rich_text",
-              "textContent": "={{ $('Extract Information-Updated').item.json.priority }}"
-            },
-            {}
+              "name": "Content-Type",
+              "value": "application/json"
+            }
           ]
         },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"archived\": true\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1216,
+        1424
+      ],
+      "id": "22176105-0063-43b9-a11b-f48c5e3fdceb",
+      "name": "HTTP Request",
+      "credentials": {
+        "notionApi": {
+          "id": "Lmzxv9I7SbCMv9e4",
+          "name": "Notion account"
+        },
+        "httpBearerAuth": {
+          "id": "lRb2ybnMZjMTyxJQ",
+          "name": "Bearer Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "advanced": true,
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "google_event_id",
+              "field2": "google_event_id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1136,
+        272
+      ],
+      "id": "b2794a5f-5222-4183-8361-68208684f15d",
+      "name": "postgres_google-change"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "290a5ca4-62ef-80a5-a851-f3b6b3fe25c8",
+          "mode": "list",
+          "cachedResultName": "Calendar",
+          "cachedResultUrl": "https://www.notion.so/290a5ca462ef80a5a851f3b6b3fe25c8"
+        },
+        "returnAll": true,
         "options": {}
       },
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        -448,
-        1488
+        -832,
+        -480
       ],
-      "id": "35b41bf7-495c-4a3a-8e48-54b1e42ccfea",
-      "name": "Update a database page1",
+      "id": "f1e1eac1-a459-47c6-b4a6-ef75247123a8",
+      "name": "Get many database pages3",
       "credentials": {
         "notionApi": {
           "id": "Lmzxv9I7SbCMv9e4",
           "name": "Notion account"
         }
       }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1280,
+        464
+      ],
+      "id": "ad090bfc-9478-4600-854e-a8add8bc4df0",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "675d0577-bb82-4197-a4ec-bec4a7c09d8b",
+                    "leftValue": "={{ $json.task }}",
+                    "rightValue": "NotionToAll",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        1664,
+        272
+      ],
+      "id": "afe23dea-f134-4b84-b6b0-89d00fcf5829",
+      "name": "Switch",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1456,
+        272
+      ],
+      "id": "308248d6-0173-46fa-859d-0aed32634453",
+      "name": "output_with_selector"
     }
   ],
   "pinData": {
     "Edit Fields2": [
       {
         "json": {
-          "kind": "calendar#event",
-          "etag": "\"3522112418571134\"",
-          "id": "52qf5ebfdb68kq6cvnled64k93",
-          "status": "confirmed",
-          "htmlLink": "https://www.google.com/calendar/event?eid=NTJxZjVlYmZkYjY4a3E2Y3ZubGVkNjRrOTMgcGVlcmFwYXRzZXRzdWsxNUBt",
-          "created": "2025-10-21T13:50:58.000Z",
-          "updated": "2025-10-21T14:16:49.285Z",
-          "summary": "asdadasdad",
-          "creator": {
-            "email": "peerapatsetsuk15@gmail.com",
-            "self": true
-          },
-          "organizer": {
-            "email": "peerapatsetsuk15@gmail.com",
-            "self": true
-          },
-          "start": {
-            "date": "2025-10-27"
-          },
-          "end": {
-            "date": "2025-10-28"
-          },
-          "transparency": "transparent",
-          "iCalUID": "52qf5ebfdb68kq6cvnled64k93@google.com",
-          "sequence": 0,
-          "reminders": {
-            "useDefault": false,
-            "overrides": [
-              {
-                "method": "popup",
-                "minutes": 420
-              }
-            ]
-          },
-          "eventType": "default"
+          "task": "NotionToAll"
         }
       }
     ]
@@ -1580,7 +1597,18 @@
   "connections": {
     "Sync event": {
       "main": [
-        []
+        [
+          {
+            "node": "Check if table exist",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get many events1",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Create Table": {
@@ -1736,7 +1764,7 @@
             "index": 0
           },
           {
-            "node": "progres_google-change",
+            "node": "postgres_google-change",
             "type": "main",
             "index": 0
           }
@@ -1747,18 +1775,12 @@
       "main": [
         [
           {
-            "node": "progres_google-change",
+            "node": "postgres_google-change",
             "type": "main",
             "index": 1
-          }
-        ]
-      ]
-    },
-    "progres_google-change": {
-      "main": [
-        [
+          },
           {
-            "node": "Create a database page",
+            "node": "Edit Fields2",
             "type": "main",
             "index": 0
           }
@@ -1829,16 +1851,6 @@
         []
       ]
     },
-    "Edit Fields2": {
-      "main": [
-        []
-      ]
-    },
-    "Get a database page": {
-      "main": [
-        []
-      ]
-    },
     "Get many database pages2": {
       "main": [
         [
@@ -1881,13 +1893,57 @@
           }
         ]
       ]
+    },
+    "Filter1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "postgres_google-change": {
+      "main": [
+        [
+          {
+            "node": "output_with_selector",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "output_with_selector",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "output_with_selector": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": true,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "c83c7033-c566-47e8-8295-3dbe9249e8d5",
+  "versionId": "47f44352-0196-4a92-acf9-652d6775653a",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "3d03ddccf1ec80a3f1ac92e7a5839ebd48e3fabade8b14a98063b7ce2a8ac15c"
